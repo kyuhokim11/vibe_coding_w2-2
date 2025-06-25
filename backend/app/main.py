@@ -2,6 +2,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.routers import chat
 
+# This is a test comment for PR_TEST branch.
+
 app = FastAPI(
     title="Chat API",
     description="간단한 채팅 API 서버",
