@@ -3,16 +3,22 @@ from typing import Optional
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_community.tools import DuckDuckGoSearchRun
 from langgraph.prebuilt import create_react_agent
+from langgraph.graph import StateGraph
+from langgraph.checkpoint.sqlite import SqliteSaver
+from langchain_core.messages import BaseMessage, FunctionMessage, HumanMessage
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.runnables import RunnableLambda
+from langchain_core.utils.function_calling import convert_to_openai_function
+from backend.app.tools import get_tools
+
+# Introduce a bug: This line will cause a syntax error or a runtime error.
+buggy_variable = undefined_variable + 1
 
 
-def create_agent():
+def create_agent(config):
     """LangGraph React Agent를 생성합니다."""
     # Gemini LLM 모델 초기화
-    llm = ChatGoogleGenerativeAI(
-        model="gemini-2.0-flash",
-        temperature=0.7,
-        google_api_key=os.getenv("GOOGLE_API_KEY")
-    )
+    model = ChatGoogleGenerativeAI(model="gemini-pro", temperature=0)
     
     # DuckDuckGo 검색 Tool 초기화
     search_tool = DuckDuckGoSearchRun()
@@ -33,7 +39,7 @@ def create_agent():
     
     # React Agent 생성
     agent = create_react_agent(
-        llm,
+        model,
         tools,
         prompt=system_prompt
     )
