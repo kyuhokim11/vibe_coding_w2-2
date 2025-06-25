@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+*.env
+.env
+.venv
+
+# macOS
+.DS_Store
+.Trashes
+*.swp
+*.bak
+*.tmp 

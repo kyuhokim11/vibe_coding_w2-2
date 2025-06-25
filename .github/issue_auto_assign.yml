@@ -1,0 +1,7 @@
+addAssignees: true
+assignees:
+  - issue_assignee # 여기에 실제 이슈 담당자의 GitHub 사용자 이름을 입력하세요.
+  # - assignee2
+numberOfAssignees: 1
+# teams:
+#   - team-b # 팀에 할당할 경우 

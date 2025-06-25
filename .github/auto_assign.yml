@@ -1,0 +1,8 @@
+addReviewers: true
+addAssignees: false
+reviewers:
+  - code_reviewer # 여기에 실제 코드 리뷰어의 GitHub 사용자 이름을 입력하세요.
+  # - reviewer2
+numberOfReviewers: 1
+# teams:
+#   - team-a # 팀에 할당할 경우 

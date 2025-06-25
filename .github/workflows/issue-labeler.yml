@@ -1,0 +1,18 @@
+name: Issue Labeler
+
+on: [issues]
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: actions/labeler@v5
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        configuration-path: .github/labels.yml 

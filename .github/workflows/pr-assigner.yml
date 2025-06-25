@@ -1,0 +1,19 @@
+name: PR Assigner
+
+on:
+  pull_request:
+    types: [opened, ready_for_review]
+
+jobs:
+  assign-pr:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+
+    steps:
+    - name: Assign PR
+      uses: randallmlough/auto-assign@v1
+      with:
+        assignees: 'github_actions' # 여기에 실제 할당할 GitHub 사용자 이름을 입력하세요.
+        # assignees: 'user1,user2' # 여러 명을 할당할 경우 쉼표로 구분
+        # teams: 'team-slug' # 팀에 할당할 경우 (조직 소유 리포지토리의 경우) 

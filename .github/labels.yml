@@ -1,0 +1,29 @@
+bug:
+  - 'fix/'
+  - 'bug/'
+  - 'bugfix/'
+  - 'fix\('
+  - '*fix*'
+feature:
+  - 'feat/'
+  - 'feature/'
+  - 'feat\('
+  - '*add*'
+  - '*implement*'
+docs:
+  - 'docs/'
+  - 'doc/'
+  - 'documentation/'
+  - 'README.md'
+  - '\.md$'
+chore:
+  - 'chore/'
+  - '*chore*'
+  - '.github/*'
+  - 'package\.json'
+refactor:
+  - 'refactor/'
+  - '*refactor*'
+ci:
+  - 'ci/'
+  - '\.github/workflows/' 

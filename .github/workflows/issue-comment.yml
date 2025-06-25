@@ -1,0 +1,20 @@
+name: Issue Commenter
+
+on: issues
+
+jobs:
+  add-comment:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+
+    steps:
+    - name: Add a welcome comment to new issues
+      uses: peter-evans/create-or-update-comment@v4
+      with:
+        issue-number: ${{ github.event.issue.number }}
+        body: |
+          👋 @${{ github.actor }} 님, 이슈를 등록해주셔서 감사합니다! 🚀
+          최대한 빠르게 이슈를 검토하고 답변드리겠습니다.
+          추가 정보가 있다면 언제든지 코멘트 해주세요!
+        reactions: '+1' 
