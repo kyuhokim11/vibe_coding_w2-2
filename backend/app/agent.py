@@ -11,10 +11,6 @@ from langchain_core.runnables import RunnableLambda
 from langchain_core.utils.function_calling import convert_to_openai_function
 from backend.app.tools import get_tools
 
-# Introduce a bug: This line will cause a syntax error or a runtime error.
-buggy_variable = undefined_variable + 1
-
-
 def create_agent(config):
     """LangGraph React Agent를 생성합니다."""
     # Gemini LLM 모델 초기화
