@@ -11,10 +11,6 @@ from langchain_core.runnables import RunnableLambda
 from langchain_core.utils.function_calling import convert_to_openai_function
 from backend.app.tools import get_tools
 
-# Bug fixed: Removed or commented out the line causing NameError.
-# buggy_variable = undefined_variable + 1
-
-
 def create_agent(config):
     """LangGraph React Agent를 생성합니다."""
     # Gemini LLM 모델 초기화
